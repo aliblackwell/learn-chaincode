@@ -12,7 +12,7 @@ Then, you will interact with the chaincode by using the network's API. After rea
 
 
 ## What is chaincode?
-Chaincode is a piece of code that is deployed into a network of [Hyperledger fabric](https://github.com/hyperledger/fabric) peer nodes that enables interaction with that network's shared ledger.  
+Chaincode is a piece of code that is deployed into a network of [Hyperledger fabric](https://github.com/hyperledger/fabric) peer nodes that enables interaction with that network's shared ledger.
 
 ***
 
@@ -28,23 +28,23 @@ Currently, the Hyperledger Fabric supports chaincode written in Go. We require [
 	cd $GOPATH
 	go get github.com/hyperledger/fabric/core/chaincode/shim
 	```
-3. The [IBM Bluemix](https://console.ng.bluemix.net/) IBM Blockchain service currently requires that chaincode to be in a [GitHub](https://Github.com/) repository. Therefore, if you don't already have a GitHub account, you should [get one](http://github.com). 
+3. The [IBM Bluemix](https://console.ng.bluemix.net/) IBM Blockchain service currently requires that chaincode to be in a [GitHub](https://Github.com/) repository. Therefore, if you don't already have a GitHub account, you should [get one](http://github.com).
 4. If you haven't got Git setup locally on your computer, you should [do that](https://help.github.com/articles/set-up-git/), as well.
 
 ## Deploying chaincode to IBM Bluemix
-1. Fork this repository to your github account (scroll up to the top and click **Fork**.)  
-2. Now clone your fork to your $GOPATH.  
+1. Fork this repository to your github account (scroll up to the top and click **Fork**.)
+2. Now clone your fork to your $GOPATH.
 
 	```
 	cd $GOPATH
 	mkdir -p src/github.com/<yourgithubid>/
 	cd src/github.com/<yourgithubid>/
-	git clone https://github.com/IBM-Blockchain/learn-chaincode.git
+	git clone https://github.com/<yourgithubid>/learn-chaincode.git
 	```
-3. Notice that we have provided two different versions of the chaincode used in this tutorial:  [Start](https://github.com/IBM-Blockchain/learn-chaincode/blob/master/start/chaincode_start.go) - the skeleton chaincode from which you will start developing, and [Finished](https://github.com/IBM-Blockchain/learn-chaincode/blob/master/finished/chaincode_finished.go) - the finished chaincode. 
+3. Notice that we have provided two different versions of the chaincode used in this tutorial:  [Start](https://github.com/IBM-Blockchain/learn-chaincode/blob/master/start/chaincode_start.go) - the skeleton chaincode from which you will start developing, and [Finished](https://github.com/IBM-Blockchain/learn-chaincode/blob/master/finished/chaincode_finished.go) - the finished chaincode.
 4. Make sure it builds in your local environment:
 	- Open a terminal or command prompt
-	
+
 	```
 	cd $GOPATH/src/github.com/<yourgithubid>/learn-chaincode/start
 	go build ./
@@ -139,7 +139,7 @@ func (t *SimpleChaincode) write(stub *shim.ChaincodeStub, args []string) ([]byte
 
 This `write` function should look similar to the `Init` change you just did.
 One major difference is that you can now set the key and value for `PutState`.
-This function allows you to store any key/value pair you want into the blockchain ledger.  
+This function allows you to store any key/value pair you want into the blockchain ledger.
 
 ###Query()
 As the name implies, `Query` is called whenever you query your chaincode state.
@@ -204,7 +204,7 @@ func main() {
 ```
 
 ### Need Help?
-If you're stuck or confused at any point, just go check out the chaincode_finished.go file.  Use this file to validate that the code snippets you're building into chaincode_start.go are correct.  
+If you're stuck or confused at any point, just go check out the chaincode_finished.go file.  Use this file to validate that the code snippets you're building into chaincode_start.go are correct.
 
 #Interacting with Your First Chaincode
 The fastest way to test your chaincode is to use the rest interface on your peers.
